@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEggsTable extends Migration
+class CreateClosingStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,13 @@ class CreateEggsTable extends Migration
      */
     public function up()
     {
-        Schema::create('eggs', function(Blueprint $table) {
+        Schema::create('closing_stocks', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->date('date');
+            $table->integer('store_id');
+            $table->integer('stage');
+            $table->integer('quantity');
+            $table->integer('value');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateEggsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('eggs');
+        Schema::drop('ClosingStocks');
     }
 }
