@@ -10,4 +10,11 @@ class stock extends Model
     {
     	return belongsTo('App\store');
     }
+
+    public static function getLiveStock($store_id)
+    {
+    	$stock = Stock::where('store_id', $store_id)->firstOrFail();
+    	return $stock;    
+    }
+
 }

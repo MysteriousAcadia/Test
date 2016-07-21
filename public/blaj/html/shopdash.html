@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shop Dash</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../styles/project.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <!-- Main Body -->
+
+
+            <div class="container menubar bg-yellow white">
+                <div class="pull-left">
+                    <div class="title">HEALTHY EGGS</div>
+                </div>
+                <div class="pull-right">
+                    <ul class="list-inline font14">
+                        <li style='padding-right:10px'>Hello, Nikhil</li>
+                        <li style='border-left: 1px solid white; padding-left: 10px'  class='pointer'> Logout </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container contentcontainer bg-white  go-bottom">
+                <div class="row shopstats">
+                    <h1 class='usercaption text-center'><strong style='margin-left: -50px'>WELCOME NIKHIL</strong></h1>
+                    <p class='row'>
+                        <div class="col-lg-4"> 
+                            <ul class="list-inline">
+                                <li class='icons'><span class='fa fa-map-marker'></span></li>
+                                <li> <strong> SHOP ADDRESS </strong> <br/>
+                                     <div class='datatext go-bottom'> Pillar No -290, PVNR Expressway, Shivarampally  </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+     q                      <ul class="list-inline">
+                                <li class='icons'><span class='fa fa-rupee'></span></li>
+                                <li> <strong> RATE </strong> <br/>
+                                     <div class='datatext go-bottom'>
+                                        <div class="rate text-center"> 
+                                          <span> 24 </span>
+                                        </div>
+                                     </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <ul class="list-inline">
+                                <li class='icons'><span class='fa fa-calendar-check-o'></span></li>
+                                <li> <strong> DATE </strong> <br/>
+                                     <div id='dateholder' class='datatext go-bottom'> 20/30/2016 </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                 </div>
+                
+                <hr class='divider'/>
+
+                <div class='row'>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox">
+                            <h3 class="header">
+                                OPENING STOCK
+                            </h3>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox panelbox-lg">
+                            <h3 class="header">
+                                STOCK INPUT
+                            </h3>
+                             <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                            <p class="content">
+                                <strong><p class="text-center font16"> Transport Damage </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged Eggs </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                        </div> 
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox panelbox-lg">
+                            <h3 class="header">
+                                DAYS SALE
+                            </h3>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Destroyed </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox">
+                            <h3 class="header">
+                                CLOSING STOCK
+                            </h3>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row contentrow stockinputrow">
+                    <div class="row rowheader">
+                        <div class='col-xs-2 col-lg-1 col-md-2 col-sm-2 iconcol no-sidepad no-sidemargin'>
+                            <span class='fa fa-circle icon pointer'></span>
+                        </div>
+                        <div class='col-xs-9 col-lg-11 col-md-11 col-sm-11 no-sidepad no-sidemargin'>
+                            <p class='rowcaption'><strong> STOCK INPUT </strong></p> 
+                        </div>
+                    </div>
+                    <div class='row formcontainer'>
+                            <form id='stockinputform' class="form-horizontal shopkeeperform" role="form">
+                              <div class="form-group">
+                                <label class="control-label col-sm-2" for="email">Vehicle Number: </label>
+                                <div class="col-sm-10">
+                                  <input type='text' class='form-control' placeholder=''>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd">No of Eggs: </label>
+                                <div class="col-sm-10">
+                                   <input type='number' class='form-control' placeholder=''>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd">Damaged Eggs: </label>
+                                <div class="col-sm-10">
+                                   <input type='number' class='form-control' placeholder=''>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd">Transport Damange: </label>
+                                <div class="col-sm-10">
+                                   <input type='number' class='form-control' placeholder=''>
+                                </div>
+                              </div>
+                              
+                              <hr class='form-divider'/>
+
+                              <div class="form-group">
+                                <label class="control-label col-sm-2"></label>
+                                <div class=" col-sm-10">
+                                  <button type="submit" class="btn btn-warning">SUBMIT</button>
+                                </div>
+                              </div>
+                            </form>
+                    </div>
+                    <div class='row tablecontainer no-sidepad no-sidemargin'>
+                        <table class="table table-bordered">
+                             <thead class='warning'>
+                                  <tr>
+                                        <th>VEHICLE NUMBER</th>
+                                        <th>REGULAR EGGS</th>
+                                        <th>DAMAGED EGGS</th>
+                                        <th>TRANSPORT DAMAGE</th>
+                                  </tr>
+                             </thead>
+                             <tbody>
+                               <tr>
+                                <td>FLV1768</td>
+                                <td>50</td>
+                                <td>20</td>
+                                <td>10</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="row contentrow regulareggsrow">
+                    <div class="row rowheader">
+                        <div class='col-xs-2 col-lg-1 col-md-2 col-sm-2 iconcol no-sidepad no-sidemargin'>
+                            <span class='fa fa-circle icon pointer' ></span>
+                        </div>
+                        <div class='col-xs-9 col-lg-11 col-md-11 col-sm-11 no-sidepad no-sidemargin'>
+                            <p class='rowcaption'><strong> REGULAR EGGS </strong></p> 
+                        </div>
+                    </div>
+                    <div class='row formcontainer'>
+                            <form id='regulareggsform' class="form-horizontal shopkeeperform" role="form">
+                                <div class="row no-sidepad">
+                                    <div class="col-lg-7">
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4" for="email">Vehicle Number:</label>
+                                            <div class="col-sm-8">
+                                               <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label col-lg-4" for="pwd">Name of buyer:</label>
+                                            <div class="col-lg-8">
+                                              <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label col-lg-4" for="pwd">No of Regular Eggs:</label>
+                                            <div class="col-lg-8">
+                                              <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label col-lg-4" for="pwd">Damaged Eggs:</label>
+                                            <div class="col-lg-8">
+                                              <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label col-lg-4" for="pwd">Destroyed Eggs:</label>
+                                            <div class="col-lg-8">
+                                              <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                          </div>
+                                    </div>
+
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">Rate:</label>
+                                            <div class="col-sm-10">
+                                               <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                              <label class="control-label col-sm-2" for="pwd">Amount:</label>
+                                              <div class="col-sm-10">
+                                                 <input type='text' class='form-control' placeholder=''>
+                                              </div>
+                                        </div> 
+                                    </div>
+                                    
+                                </div>
+
+                              
+                              <hr class='form-divider'/>
+
+                              <div class="form-group">
+                                <label class="control-label col-sm-2"></label>
+                                <div class=" col-sm-10">
+                                  <button type="submit" class="btn btn-warning">SUBMIT</button>
+                                </div>
+                              </div>
+                            </form>
+                    </div>
+                    <div class='row tablecontainer no-sidepad no-sidemargin'>
+                        <table class="table table-bordered">
+                             <thead class='warning'>
+                                  <tr>
+                                        <th>VEHICLE NUMBER</th>
+                                        <th>NAME OF BUYER</th>
+                                        <th>NO OF EGGS</th>
+                                        <th>DAMAGED EGGS</th>
+                                        <th>DESTROYED EGGS</th>
+                                        <th>RATE</th>
+                                        <th>AMT</th>
+                                  </tr>
+                             </thead>
+                             <tbody>
+                              <tr>
+                                    <td>FLV1768</td>
+                                    <td>First </td>
+                                    <td>50</td>
+                                    <td>20</td>
+                                    <td>10</td>
+                                    <td>3 </td>
+                                    <td> 300 </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                </div>
+                <div class="row contentrow damagedeggsrow">
+
+                    <div class="row rowheader">
+                        <div class='col-xs-2 col-lg-1 col-md-2 col-sm-2 iconcol no-sidepad no-sidemargin'>
+                            <span class='fa fa-circle icon pointer'></span>
+                        </div>
+                        <div class='col-xs-9 col-lg-11 col-md-11 col-sm-11 no-sidepad no-sidemargin'>
+                            <p class='rowcaption'><strong> DAMAGED EGGS </strong></p> 
+                        </div>
+                    </div>
+                    <div class='row formcontainer'>
+                            <form id='damagedeggsform' class="form-horizontal shopkeeperform" role="form">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="email">Vehicle Number:</label>
+                                            <div class="col-sm-10">
+                                              <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                         </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">Name of buyer:</label>
+                                            <div class="col-sm-10">
+                                              <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">No of Damaged Eggs:</label>
+                                            <div class="col-sm-10">
+                                               <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">Rate:</label>
+                                            <div class="col-sm-10">
+                                               <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">Amount:</label>
+                                            <div class="col-sm-10">
+                                               <input type='text' class='form-control' placeholder=''>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                              
+                              <hr class='form-divider'/>
+
+                              <div class="form-group">
+                                <label class="control-label col-sm-2"></label>
+                                <div class=" col-sm-10">
+                                  <button type="submit" class="btn btn-warning" >SUBMIT</button>
+                                </div>
+                              </div>
+                            </form>
+                    </div>
+                    <div class='row tablecontainer no-sidepad no-sidemargin'>
+                        <table class="table table-bordered">
+                             <thead class='warning'>
+                                  <tr>
+                                        <th>VEHICLE NUMBER</th>
+                                        <th>NAME OF BUYER</th>
+                                        <th>NO OF EGGS</th>
+                                        <th>RATE</th>
+                                        <th>AMT</th>
+                                  </tr>
+                             </thead>
+                             <tbody>
+                              <tr>
+                                    <td>FLV1768</td>
+                                    <td>First </td>
+                                    <td>50</td>
+                                    <td>3 </td>
+                                    <td> 150 </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+                    
+                <hr class='divider'/>
+
+
+                <div class='row' style='padding-top:30px'>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox">
+                            <h3 class="header">
+                                OPENING STOCK
+                            </h3>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox panelbox-lg">
+                            <h3 class="header">
+                                STOCK INPUT
+                            </h3>
+                             <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                            <p class="content">
+                                <strong><p class="text-center font16"> Transport Damage </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged Eggs </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                        </div> 
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox panelbox-lg">
+                            <h3 class="header">
+                                DAYS SALE
+                            </h3>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Destroyed </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panelbox">
+                            <h3 class="header">
+                                CLOSING STOCK
+                            </h3>
+                            <p class="content">
+                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p> 
+                            <p class="content">
+                                <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                <div class="rate text-center"> <span> 24 </span>  </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='row expenserow no-sidemargin'>
+                    <p class='title'><h3> Expenses</h3></p>
+                    <div class="col-lg-6">
+                        <label class='go-bottom'> Total Sales:  Rs 10000 </label> <br/>
+                        <label class='go-bottom'> Total Expenses: Rs 4000</label> <br/>
+                        <label class='go-bottom'> Amount Deposited in Bank: Rs 6000</label> <br/>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class='go-bottom'>
+                            <span class='fa fa-plus-square pointer'> </span> Add Expense
+                            <form id='expenseform' role="form" style='display:none'>
+                                <div class="form-group">
+                                    <label class="control-label" for="email">Details</label>
+                                    <div>
+                                       <input type='text' class='form-control' placeholder=''>
+                                    </div>
+                                 </div>
+                                <div class="form-group go-bottom">
+                                    <label class="control-label" for="pwd">Amount</label>
+                                    <div>
+                                        <input type='text' class='form-control' placeholder=''>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label"></label>
+                                    <div>
+                                      <button type="submit" class="btn btn-warning">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </p>
+
+                        <p class='expensetable'>
+                            <table class="table table-bordered">
+                                 <thead class='warning'>
+                                      <tr>
+                                            <th>Details</th>
+                                            <th>Amount</th>
+                                      </tr>
+                                 </thead>
+                                 <tbody>
+                                  <tr>
+                                    <td>Transport</td>
+                                    <td>1500</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                         
+                    </div>
+                </div>
+
+                <div class="row buttonrow text-center">
+                    <button class='btn btn-lg btn-warning'> STOCK MATCHED , SHOP CLOSED </button>
+                    <button class='btn btn-lg btn-danger' style='margin-left: 30px'> STOCK NOT MATCHED </button>
+                </div>
+
+
+            </div>
+
+
+
+
+    
+
+    <!-- End of main Body -->
+
+
+    <script type="text/javascript" src="../scripts/project.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

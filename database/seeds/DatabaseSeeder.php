@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
         // $this->call('UsersTableSeeder');
         // $this->call('StoresTableSeeder');
         // $this->call('StocksTableSeeder');
-        $this->call('ClosingStocksTable');
+        // $this->call('ClosingStocksTable');
+        // $this->call('InputTransactionsSeeder');
+        // $this->call('OutputTransactionsSeeder');
+        // $this->call('FinancesSeeder');
+        $this->call('CurrentPricesTable');
     }
 }

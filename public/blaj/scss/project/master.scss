@@ -1,0 +1,226 @@
+@import "../imports";
+@import "config";
+@import "fonts";
+@import "header";
+@import "footer";
+@import "forms";
+@import "components";
+
+/* .custom-container {
+  background: red;
+  @include device('mobile') {
+    background:blue;
+  }
+  @include device('phablet') {
+    background:yellow;
+  }
+  @include device('tablet') {
+    background:red;
+  }
+  @include device('laptop') {
+    background:green;
+  }
+  @include device('desktop') {
+    background:orange;
+  }
+} */
+
+///Colors
+
+.bg-yellow{background-color: $primary-color;}
+.yellow{color: $primary-color;}
+
+body{background: #eee !important; padding-bottom:80px !important; }
+
+
+
+.contentcontainer{
+  border-radius: 4px;
+  margin-bottom:40px !important;
+
+
+  .divider{
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
+    margin-bottom:20px;
+  } //divider
+
+
+  .contentrow{
+    margin-left: 50px !important;
+    margin-top: 40px !important;
+      .rowheader{
+         margin-top: 20px;
+        .iconcol{
+          width: 50px !important;
+          span{font-size: 60px; color: orange;}
+        }
+        .rowcaption{
+            margin-top: 20px;
+            margin-left: 15px;
+        }
+      }//row-header
+  } //content-row
+
+
+  .formcontainer {
+      form {
+        margin-top: 40px;
+        margin-left: 20px !important;
+        label {
+          text-align: left !important;
+          font-weight: normal !important;
+          width: 25%;
+        }
+        input {
+          width: 200px;
+        }
+      }
+      button {
+        width: 125px !important;
+        font-size: 15px !important;
+        font-weight: bold !important;
+      }
+      .form-divider {
+        border-top: 1px solid #ddd !important;
+        width: 103%;
+      }
+  } //input-forms
+
+
+  form{
+    margin: 100px auto;
+    border: 1px solid #ddd;
+    padding: 30px;
+    width: 800px;
+    border-radius: 4px;
+  }
+
+
+  .shopstats{
+    .usercaption{font-size: 60px;  margin: 40px auto 100px !important; }
+    .icons{
+      width: 40px;
+      span{ 
+        position: absolute;
+        top: -5px;
+        font-size: 36px;
+        color: orange;
+      }//icons-span
+    }//icons
+    .datatext{
+      width: 150px;
+      margin-top:15px;
+      text-transform: uppercase;
+    }
+  }//shop-stats
+
+
+  .panelbox{
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      height: 350px;
+      margin: 20px auto;
+      .header{
+        border-bottom: 5px solid orange;
+        padding-bottom: 15px;
+        width: 90%;
+        margin: 30px auto !important;
+        font-weight: bold !important;
+        font-size: 18px !important;
+        text-align: center !important;
+        letter-spacing: 0.1em;
+      }
+
+      .content{
+        width: 90%;
+        margin: 5px auto 40px !important;
+        padding-left: 30px !important;
+
+        .rate{
+          margin-top: 20px !important;
+          span{
+            font-size: 24px;
+            background: #eee;
+            padding: 10px;
+            margin-right:7px;
+          } //rate span
+        }//rate
+      }
+  }//panel-box
+
+
+  .panelbox-lg{
+      height:450px !important;
+  }
+
+
+  .expenserow{
+    padding-left: 30px !important;
+    padding-bottom:40px !important;
+
+    .title{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    form{
+      width: 400px !important;
+      padding-top: 30px !important;
+      margin-left: 0px !important;
+      margin-top: 30px !important;
+    }
+  }
+
+
+  .buttonrow{
+    padding-bottom:90px !important;
+  }
+
+
+}//content-container
+
+
+
+
+
+
+/* Admin Panel */
+
+///dashboard
+.dashboard{
+  .toprow{
+    .adminusercaption{
+      font-size: 40px;
+      margin: 40px auto !important;
+    }
+    .ratecontrolrow{
+      margin-top: 40px !important;
+      margin-bottom: 40px !important;
+      margin-left: -40px !important;
+    }
+
+    .ratecontrolinput{
+      width: 400px !important;
+    }
+
+    .contentcontainer .adminusercaption{
+      font-size: 60px;
+      margin: 40px auto !important;
+    }
+  }
+
+
+  .statsrow{
+    .statsbox{
+        background: white;
+        width: 80%;
+        padding-bottom:30px;
+        img{height: 100px;}
+    }
+  }
+
+  .salesrow{height: 400px;}
+}
+

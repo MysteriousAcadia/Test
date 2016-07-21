@@ -10,4 +10,11 @@ class ClosingStock extends Model
     {
     	return $this->belongsTo('App\store');
     }
+
+    public static function getOpeningStock($date, $store)
+    {
+    	return ClosingStock::where('store_id', $store)
+    						->where('date', $date)
+    						->firstOrFail();
+    }
 }

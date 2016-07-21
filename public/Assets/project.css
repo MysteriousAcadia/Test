@@ -1,0 +1,1789 @@
+/* Base Files */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/** sk-helper.scss
+    Contains helper functions for bootstrap  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** font.scss
+    Contains commonly used mixins for typography  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+a {
+  text-decoration: none !important; }
+
+.pointer {
+  cursor: pointer; }
+
+.font12 {
+  font-size: 12px;
+  font-size: 0.75rem; }
+
+.font13 {
+  font-size: 13px;
+  font-size: 0.8125rem; }
+
+.font14 {
+  font-size: 14px;
+  font-size: 0.875rem; }
+
+.font16 {
+  font-size: 16px;
+  font-size: 1rem; }
+
+.font18 {
+  font-size: 18px;
+  font-size: 1.125rem; }
+
+.font20 {
+  font-size: 20px;
+  font-size: 1.25rem; }
+
+.font22 {
+  font-size: 22px;
+  font-size: 1.375rem; }
+
+.font24 {
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+.medgrey {
+  color: #555; }
+
+.lightgrey {
+  color: #777; }
+
+.silvergrey {
+  color: #9c9c9c; }
+
+.white {
+  color: #fff; }
+
+.bg-white {
+  background-color: #fff; }
+
+.bg-grey {
+  background-color: #eee; }
+
+.no-sidemargin {
+  margin-left: 0px !important;
+  margin-right: 0px !important; }
+
+.no-sidepad {
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+
+.add-sidemargin {
+  margin-left: 15px !important;
+  margin-right: 15px !important; }
+
+.add-sidepad {
+  padding-left: 15px !important;
+  padding-right: 15px !important; }
+
+.add-sidepad-left {
+  padding-left: 15px !important; }
+
+.go-bottom-xs {
+  margin-top: 5px !important; }
+
+.go-bottom-sm {
+  margin-top: 10px !important; }
+
+.go-bottom-md {
+  margin-top: 20px !important; }
+
+.go-bottom-lg {
+  margin-top: 30px !important; }
+
+.go-right-xs {
+  margin-left: 5px; }
+
+.go-right-sm {
+  margin-left: 10px; }
+
+.go-right-md {
+  margin-left: 20px; }
+
+.go-right-lg {
+  margin-left: 30px; }
+
+.go-left-xs {
+  margin-right: 5px; }
+
+.go-left-sm {
+  margin-right: 10px; }
+
+.go-left-md {
+  margin-right: 20px; }
+
+.go-left-lg {
+  margin-right: 30px; }
+
+.go-top-xs {
+  margin-bottom: 5px; }
+
+.go-top-sm {
+  margin-bottom: 10px; }
+
+.go-top-md {
+  margin-bottom: 20px; }
+
+.go-top-lg {
+  margin-bottom: 30px; }
+
+/*Components*/
+/*Mixins*/
+/** alignment.scss
+    Contains commonly used mixins for alignment  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** borders.scss
+    Contains commonly used mixins for borders and outlines  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** responsive-web.scss
+    Contains commonly used mixins for responsive web design  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** font.scss
+    Contains commonly used mixins for typography  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** visuals.scss
+    Contains commonly used visual mixins  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** animations.scss
+    Contains commonly used mixins and classes for animation 
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/*
+==============================================
+slideDown
+==============================================
+*/
+@-webkit-keyframes slide-down {
+  0% {
+    transform: translateY(-100%); }
+  50% {
+    transform: translateY(8%); }
+  65% {
+    transform: translateY(-4%); }
+  80% {
+    transform: translateY(4%); }
+  95% {
+    transform: translateY(-2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-moz-keyframes slide-down {
+  0% {
+    transform: translateY(-100%); }
+  50% {
+    transform: translateY(8%); }
+  65% {
+    transform: translateY(-4%); }
+  80% {
+    transform: translateY(4%); }
+  95% {
+    transform: translateY(-2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-ms-keyframes slide-down {
+  0% {
+    transform: translateY(-100%); }
+  50% {
+    transform: translateY(8%); }
+  65% {
+    transform: translateY(-4%); }
+  80% {
+    transform: translateY(4%); }
+  95% {
+    transform: translateY(-2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-o-keyframes slide-down {
+  0% {
+    transform: translateY(-100%); }
+  50% {
+    transform: translateY(8%); }
+  65% {
+    transform: translateY(-4%); }
+  80% {
+    transform: translateY(4%); }
+  95% {
+    transform: translateY(-2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%); }
+  50% {
+    transform: translateY(8%); }
+  65% {
+    transform: translateY(-4%); }
+  80% {
+    transform: translateY(4%); }
+  95% {
+    transform: translateY(-2%); }
+  100% {
+    transform: translateY(0%); } }
+
+/*
+==============================================
+slideUp
+==============================================
+*/
+@-webkit-keyframes slide-up {
+  0% {
+    transform: translateY(100%); }
+  50% {
+    transform: translateY(-8%); }
+  65% {
+    transform: translateY(4%); }
+  80% {
+    transform: translateY(-4%); }
+  95% {
+    transform: translateY(2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-moz-keyframes slide-up {
+  0% {
+    transform: translateY(100%); }
+  50% {
+    transform: translateY(-8%); }
+  65% {
+    transform: translateY(4%); }
+  80% {
+    transform: translateY(-4%); }
+  95% {
+    transform: translateY(2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-ms-keyframes slide-up {
+  0% {
+    transform: translateY(100%); }
+  50% {
+    transform: translateY(-8%); }
+  65% {
+    transform: translateY(4%); }
+  80% {
+    transform: translateY(-4%); }
+  95% {
+    transform: translateY(2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-o-keyframes slide-up {
+  0% {
+    transform: translateY(100%); }
+  50% {
+    transform: translateY(-8%); }
+  65% {
+    transform: translateY(4%); }
+  80% {
+    transform: translateY(-4%); }
+  95% {
+    transform: translateY(2%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%); }
+  50% {
+    transform: translateY(-8%); }
+  65% {
+    transform: translateY(4%); }
+  80% {
+    transform: translateY(-4%); }
+  95% {
+    transform: translateY(2%); }
+  100% {
+    transform: translateY(0%); } }
+
+/*
+==============================================
+slideLeft
+==============================================
+*/
+@-webkit-keyframes slide-left {
+  0% {
+    transform: translateX(150%); }
+  50% {
+    transform: translateX(-8%); }
+  65% {
+    transform: translateX(4%); }
+  80% {
+    transform: translateX(-4%); }
+  95% {
+    transform: translateX(2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@-moz-keyframes slide-left {
+  0% {
+    transform: translateX(150%); }
+  50% {
+    transform: translateX(-8%); }
+  65% {
+    transform: translateX(4%); }
+  80% {
+    transform: translateX(-4%); }
+  95% {
+    transform: translateX(2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@-ms-keyframes slide-left {
+  0% {
+    transform: translateX(150%); }
+  50% {
+    transform: translateX(-8%); }
+  65% {
+    transform: translateX(4%); }
+  80% {
+    transform: translateX(-4%); }
+  95% {
+    transform: translateX(2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@-o-keyframes slide-left {
+  0% {
+    transform: translateX(150%); }
+  50% {
+    transform: translateX(-8%); }
+  65% {
+    transform: translateX(4%); }
+  80% {
+    transform: translateX(-4%); }
+  95% {
+    transform: translateX(2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(150%); }
+  50% {
+    transform: translateX(-8%); }
+  65% {
+    transform: translateX(4%); }
+  80% {
+    transform: translateX(-4%); }
+  95% {
+    transform: translateX(2%); }
+  100% {
+    transform: translateX(0%); } }
+
+/*
+==============================================
+slideRight
+==============================================
+*/
+@-webkit-keyframes slide-right {
+  0% {
+    transform: translateX(-150%); }
+  50% {
+    transform: translateX(8%); }
+  65% {
+    transform: translateX(-4%); }
+  80% {
+    transform: translateX(4%); }
+  95% {
+    transform: translateX(-2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@-moz-keyframes slide-right {
+  0% {
+    transform: translateX(-150%); }
+  50% {
+    transform: translateX(8%); }
+  65% {
+    transform: translateX(-4%); }
+  80% {
+    transform: translateX(4%); }
+  95% {
+    transform: translateX(-2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@-ms-keyframes slide-right {
+  0% {
+    transform: translateX(-150%); }
+  50% {
+    transform: translateX(8%); }
+  65% {
+    transform: translateX(-4%); }
+  80% {
+    transform: translateX(4%); }
+  95% {
+    transform: translateX(-2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@-o-keyframes slide-right {
+  0% {
+    transform: translateX(-150%); }
+  50% {
+    transform: translateX(8%); }
+  65% {
+    transform: translateX(-4%); }
+  80% {
+    transform: translateX(4%); }
+  95% {
+    transform: translateX(-2%); }
+  100% {
+    transform: translateX(0%); } }
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-150%); }
+  50% {
+    transform: translateX(8%); }
+  65% {
+    transform: translateX(-4%); }
+  80% {
+    transform: translateX(4%); }
+  95% {
+    transform: translateX(-2%); }
+  100% {
+    transform: translateX(0%); } }
+
+/*
+==============================================
+slideExpandUp
+==============================================
+*/
+@-webkit-keyframes slide-expand-up {
+  0% {
+    transform: translateY(100%) scaleX(0.5); }
+  30% {
+    transform: translateY(-8%) scaleX(0.5); }
+  40% {
+    transform: translateY(2%) scaleX(0.5); }
+  50% {
+    transform: translateY(0%) scaleX(1.1); }
+  60% {
+    transform: translateY(0%) scaleX(0.9); }
+  70% {
+    transform: translateY(0%) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleX(0.95); }
+  90% {
+    transform: translateY(0%) scaleX(1.02); }
+  100% {
+    transform: translateY(0%) scaleX(1); } }
+
+@-moz-keyframes slide-expand-up {
+  0% {
+    transform: translateY(100%) scaleX(0.5); }
+  30% {
+    transform: translateY(-8%) scaleX(0.5); }
+  40% {
+    transform: translateY(2%) scaleX(0.5); }
+  50% {
+    transform: translateY(0%) scaleX(1.1); }
+  60% {
+    transform: translateY(0%) scaleX(0.9); }
+  70% {
+    transform: translateY(0%) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleX(0.95); }
+  90% {
+    transform: translateY(0%) scaleX(1.02); }
+  100% {
+    transform: translateY(0%) scaleX(1); } }
+
+@-ms-keyframes slide-expand-up {
+  0% {
+    transform: translateY(100%) scaleX(0.5); }
+  30% {
+    transform: translateY(-8%) scaleX(0.5); }
+  40% {
+    transform: translateY(2%) scaleX(0.5); }
+  50% {
+    transform: translateY(0%) scaleX(1.1); }
+  60% {
+    transform: translateY(0%) scaleX(0.9); }
+  70% {
+    transform: translateY(0%) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleX(0.95); }
+  90% {
+    transform: translateY(0%) scaleX(1.02); }
+  100% {
+    transform: translateY(0%) scaleX(1); } }
+
+@-o-keyframes slide-expand-up {
+  0% {
+    transform: translateY(100%) scaleX(0.5); }
+  30% {
+    transform: translateY(-8%) scaleX(0.5); }
+  40% {
+    transform: translateY(2%) scaleX(0.5); }
+  50% {
+    transform: translateY(0%) scaleX(1.1); }
+  60% {
+    transform: translateY(0%) scaleX(0.9); }
+  70% {
+    transform: translateY(0%) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleX(0.95); }
+  90% {
+    transform: translateY(0%) scaleX(1.02); }
+  100% {
+    transform: translateY(0%) scaleX(1); } }
+
+@keyframes slide-expand-up {
+  0% {
+    transform: translateY(100%) scaleX(0.5); }
+  30% {
+    transform: translateY(-8%) scaleX(0.5); }
+  40% {
+    transform: translateY(2%) scaleX(0.5); }
+  50% {
+    transform: translateY(0%) scaleX(1.1); }
+  60% {
+    transform: translateY(0%) scaleX(0.9); }
+  70% {
+    transform: translateY(0%) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleX(0.95); }
+  90% {
+    transform: translateY(0%) scaleX(1.02); }
+  100% {
+    transform: translateY(0%) scaleX(1); } }
+
+/*
+==============================================
+expandUp
+==============================================
+*/
+@-webkit-keyframes expand-up {
+  0% {
+    transform: translateY(100%) scale(0.6) scaleY(0.5); }
+  60% {
+    transform: translateY(-7%) scaleY(1.12); }
+  75% {
+    transform: translateY(3%); }
+  100% {
+    transform: translateY(0%) scale(1) scaleY(1); } }
+
+@-moz-keyframes expand-up {
+  0% {
+    transform: translateY(100%) scale(0.6) scaleY(0.5); }
+  60% {
+    transform: translateY(-7%) scaleY(1.12); }
+  75% {
+    transform: translateY(3%); }
+  100% {
+    transform: translateY(0%) scale(1) scaleY(1); } }
+
+@-ms-keyframes expand-up {
+  0% {
+    transform: translateY(100%) scale(0.6) scaleY(0.5); }
+  60% {
+    transform: translateY(-7%) scaleY(1.12); }
+  75% {
+    transform: translateY(3%); }
+  100% {
+    transform: translateY(0%) scale(1) scaleY(1); } }
+
+@-o-keyframes expand-up {
+  0% {
+    transform: translateY(100%) scale(0.6) scaleY(0.5); }
+  60% {
+    transform: translateY(-7%) scaleY(1.12); }
+  75% {
+    transform: translateY(3%); }
+  100% {
+    transform: translateY(0%) scale(1) scaleY(1); } }
+
+@keyframes expand-up {
+  0% {
+    transform: translateY(100%) scale(0.6) scaleY(0.5); }
+  60% {
+    transform: translateY(-7%) scaleY(1.12); }
+  75% {
+    transform: translateY(3%); }
+  100% {
+    transform: translateY(0%) scale(1) scaleY(1); } }
+
+/*
+==============================================
+fadeIn
+==============================================
+*/
+@-webkit-keyframes fade-in {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0; }
+  60% {
+    -webkit-transform: scale(1.1); }
+  80% {
+    -webkit-transform: scale(0.9);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@-moz-keyframes fade-in {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0; }
+  60% {
+    -webkit-transform: scale(1.1); }
+  80% {
+    -webkit-transform: scale(0.9);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@-ms-keyframes fade-in {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0; }
+  60% {
+    -webkit-transform: scale(1.1); }
+  80% {
+    -webkit-transform: scale(0.9);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@-o-keyframes fade-in {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0; }
+  60% {
+    -webkit-transform: scale(1.1); }
+  80% {
+    -webkit-transform: scale(0.9);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0; }
+  60% {
+    -webkit-transform: scale(1.1); }
+  80% {
+    -webkit-transform: scale(0.9);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+/*
+==============================================
+expandOpen
+==============================================
+*/
+@-webkit-keyframes expand-open {
+  0% {
+    transform: scale(1.8); }
+  50% {
+    transform: scale(0.95); }
+  80% {
+    transform: scale(1.05); }
+  90% {
+    transform: scale(0.98); }
+  100% {
+    transform: scale(1); } }
+
+@-moz-keyframes expand-open {
+  0% {
+    transform: scale(1.8); }
+  50% {
+    transform: scale(0.95); }
+  80% {
+    transform: scale(1.05); }
+  90% {
+    transform: scale(0.98); }
+  100% {
+    transform: scale(1); } }
+
+@-ms-keyframes expand-open {
+  0% {
+    transform: scale(1.8); }
+  50% {
+    transform: scale(0.95); }
+  80% {
+    transform: scale(1.05); }
+  90% {
+    transform: scale(0.98); }
+  100% {
+    transform: scale(1); } }
+
+@-o-keyframes expand-open {
+  0% {
+    transform: scale(1.8); }
+  50% {
+    transform: scale(0.95); }
+  80% {
+    transform: scale(1.05); }
+  90% {
+    transform: scale(0.98); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes expand-open {
+  0% {
+    transform: scale(1.8); }
+  50% {
+    transform: scale(0.95); }
+  80% {
+    transform: scale(1.05); }
+  90% {
+    transform: scale(0.98); }
+  100% {
+    transform: scale(1); } }
+
+/*
+==============================================
+bigEntrance
+==============================================
+*/
+@-webkit-keyframes big-entrance {
+  0% {
+    transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+    opacity: 0.2; }
+  30% {
+    transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+    opacity: 1; }
+  45% {
+    transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  60% {
+    transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  75% {
+    transform: scale(0.99) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  90% {
+    transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; } }
+
+@-moz-keyframes big-entrance {
+  0% {
+    transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+    opacity: 0.2; }
+  30% {
+    transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+    opacity: 1; }
+  45% {
+    transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  60% {
+    transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  75% {
+    transform: scale(0.99) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  90% {
+    transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; } }
+
+@-ms-keyframes big-entrance {
+  0% {
+    transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+    opacity: 0.2; }
+  30% {
+    transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+    opacity: 1; }
+  45% {
+    transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  60% {
+    transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  75% {
+    transform: scale(0.99) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  90% {
+    transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; } }
+
+@-o-keyframes big-entrance {
+  0% {
+    transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+    opacity: 0.2; }
+  30% {
+    transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+    opacity: 1; }
+  45% {
+    transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  60% {
+    transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  75% {
+    transform: scale(0.99) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  90% {
+    transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; } }
+
+@keyframes big-entrance {
+  0% {
+    transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+    opacity: 0.2; }
+  30% {
+    transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+    opacity: 1; }
+  45% {
+    transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  60% {
+    transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  75% {
+    transform: scale(0.99) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  90% {
+    transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1; } }
+
+/*
+==============================================
+hatch
+==============================================
+*/
+@-webkit-keyframes hatch {
+  0% {
+    transform: rotate(0deg) scaleY(0.6); }
+  20% {
+    transform: rotate(-2deg) scaleY(1.05); }
+  35% {
+    transform: rotate(2deg) scaleY(1); }
+  50% {
+    transform: rotate(-2deg); }
+  65% {
+    transform: rotate(1deg); }
+  80% {
+    transform: rotate(-1deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@-moz-keyframes hatch {
+  0% {
+    transform: rotate(0deg) scaleY(0.6); }
+  20% {
+    transform: rotate(-2deg) scaleY(1.05); }
+  35% {
+    transform: rotate(2deg) scaleY(1); }
+  50% {
+    transform: rotate(-2deg); }
+  65% {
+    transform: rotate(1deg); }
+  80% {
+    transform: rotate(-1deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@-ms-keyframes hatch {
+  0% {
+    transform: rotate(0deg) scaleY(0.6); }
+  20% {
+    transform: rotate(-2deg) scaleY(1.05); }
+  35% {
+    transform: rotate(2deg) scaleY(1); }
+  50% {
+    transform: rotate(-2deg); }
+  65% {
+    transform: rotate(1deg); }
+  80% {
+    transform: rotate(-1deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@-o-keyframes hatch {
+  0% {
+    transform: rotate(0deg) scaleY(0.6); }
+  20% {
+    transform: rotate(-2deg) scaleY(1.05); }
+  35% {
+    transform: rotate(2deg) scaleY(1); }
+  50% {
+    transform: rotate(-2deg); }
+  65% {
+    transform: rotate(1deg); }
+  80% {
+    transform: rotate(-1deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes hatch {
+  0% {
+    transform: rotate(0deg) scaleY(0.6); }
+  20% {
+    transform: rotate(-2deg) scaleY(1.05); }
+  35% {
+    transform: rotate(2deg) scaleY(1); }
+  50% {
+    transform: rotate(-2deg); }
+  65% {
+    transform: rotate(1deg); }
+  80% {
+    transform: rotate(-1deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+/*
+==============================================
+bounce
+==============================================
+*/
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6); }
+  60% {
+    transform: translateY(-100%) scaleY(1.1); }
+  70% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleY(1.05) scaleX(1); }
+  90% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1); }
+  100% {
+    transform: translateY(0%) scaleY(1) scaleX(1); } }
+
+@-moz-keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6); }
+  60% {
+    transform: translateY(-100%) scaleY(1.1); }
+  70% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleY(1.05) scaleX(1); }
+  90% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1); }
+  100% {
+    transform: translateY(0%) scaleY(1) scaleX(1); } }
+
+@-ms-keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6); }
+  60% {
+    transform: translateY(-100%) scaleY(1.1); }
+  70% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleY(1.05) scaleX(1); }
+  90% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1); }
+  100% {
+    transform: translateY(0%) scaleY(1) scaleX(1); } }
+
+@-o-keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6); }
+  60% {
+    transform: translateY(-100%) scaleY(1.1); }
+  70% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleY(1.05) scaleX(1); }
+  90% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1); }
+  100% {
+    transform: translateY(0%) scaleY(1) scaleX(1); } }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6); }
+  60% {
+    transform: translateY(-100%) scaleY(1.1); }
+  70% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05); }
+  80% {
+    transform: translateY(0%) scaleY(1.05) scaleX(1); }
+  90% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1); }
+  100% {
+    transform: translateY(0%) scaleY(1) scaleX(1); } }
+
+/*
+==============================================
+pulse
+==============================================
+*/
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7; }
+  50% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7; } }
+
+@-moz-keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7; }
+  50% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7; } }
+
+@-ms-keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7; }
+  50% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7; } }
+
+@-o-keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7; }
+  50% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7; } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7; }
+  50% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7; } }
+
+/*
+==============================================
+floating
+==============================================
+*/
+@-webkit-keyframes floating {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(8%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-moz-keyframes floating {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(8%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-ms-keyframes floating {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(8%); }
+  100% {
+    transform: translateY(0%); } }
+
+@-o-keyframes floating {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(8%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(8%); }
+  100% {
+    transform: translateY(0%); } }
+
+/*
+==============================================
+tossing
+==============================================
+*/
+@-webkit-keyframes floating {
+  0% {
+    transform: rotate(-4deg); }
+  50% {
+    transform: rotate(4deg); }
+  100% {
+    transform: rotate(-4deg); } }
+
+@-moz-keyframes floating {
+  0% {
+    transform: rotate(-4deg); }
+  50% {
+    transform: rotate(4deg); }
+  100% {
+    transform: rotate(-4deg); } }
+
+@-ms-keyframes floating {
+  0% {
+    transform: rotate(-4deg); }
+  50% {
+    transform: rotate(4deg); }
+  100% {
+    transform: rotate(-4deg); } }
+
+@-o-keyframes floating {
+  0% {
+    transform: rotate(-4deg); }
+  50% {
+    transform: rotate(4deg); }
+  100% {
+    transform: rotate(-4deg); } }
+
+@keyframes floating {
+  0% {
+    transform: rotate(-4deg); }
+  50% {
+    transform: rotate(4deg); }
+  100% {
+    transform: rotate(-4deg); } }
+
+/*
+==============================================
+pullUp
+==============================================
+*/
+@-webkit-keyframes pull-up {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@-moz-keyframes pull-up {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@-ms-keyframes pull-up {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@-o-keyframes pull-up {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@keyframes pull-up {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+/*
+==============================================
+pullDown
+==============================================
+*/
+@-webkit-keyframes pull-down {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@-moz-keyframes pull-down {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@-ms-keyframes pull-down {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@-o-keyframes pull-down {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+@keyframes pull-down {
+  0% {
+    transform: scaleY(0.1); }
+  40% {
+    transform: scaleY(1.02); }
+  60% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(0.98); }
+  80% {
+    transform: scaleY(1.01); }
+  100% {
+    transform: scaleY(1); } }
+
+/*
+==============================================
+stretchLeft
+==============================================
+*/
+@-webkit-keyframes stretch-left {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@-moz-keyframes stretch-left {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@-ms-keyframes stretch-left {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@-o-keyframes stretch-left {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@keyframes stretch-left {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+/*
+==============================================
+stretchRight
+==============================================
+*/
+@-webkit-keyframes stretch-right {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@-moz-keyframes stretch-right {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@-ms-keyframes stretch-right {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@-o-keyframes stretch-right {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+@keyframes stretch-right {
+  0% {
+    transform: scaleX(0.3); }
+  40% {
+    transform: scaleX(1.02); }
+  60% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(0.98); }
+  80% {
+    transform: scaleX(1.01); }
+  100% {
+    transform: scaleX(1); } }
+
+/*Layout*/
+/** header.scss
+    Contains css for the header  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** footer.scss
+    Contains css for the footer  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/** forms.scss
+    Contains css for the forms  
+    -- Developed and Maintained by 
+    Sukor Consulting **/
+/*Themes*/
+/** Config.scss
+    Contains configuration variables for projects 
+    -- Developed and Maintained by Sukor Consulting **/
+/* .custom-container {
+  background: red;
+  @include device('mobile') {
+    background:blue;
+  }
+  @include device('phablet') {
+    background:yellow;
+  }
+  @include device('tablet') {
+    background:red;
+  }
+  @include device('laptop') {
+    background:green;
+  }
+  @include device('desktop') {
+    background:orange;
+  }
+} */
+.bg-yellow {
+  background-color: "orange"; }
+
+.yellow {
+  color: "orange"; }
+
+body {
+  background: #eee;
+  padding-bottom: 80px !important; }
+
+.menubar {
+  height: 50px;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 16px; }
+
+.contentcontainer {
+  border-radius: 4px;
+  margin-bottom: 40px !important; }
+  .contentcontainer .divider {
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
+    margin-bottom: 20px; }
+  .contentcontainer .contentrow {
+    margin-left: 50px !important;
+    margin-top: 40px !important; }
+    .contentcontainer .contentrow .rowheader {
+      margin-top: 20px; }
+      .contentcontainer .contentrow .rowheader .iconcol {
+        width: 50px !important; }
+        .contentcontainer .contentrow .rowheader .iconcol span {
+          font-size: 60px;
+          color: orange; }
+      .contentcontainer .contentrow .rowheader .rowcaption {
+        margin-top: 20px;
+        margin-left: 15px; }
+  .contentcontainer .tablecontainer table {
+    width: 98%;
+    margin-top: 60px;
+    border-bottom: 5px solid orange !important; }
+  .contentcontainer .tablecontainer thead {
+    height: 70px !important;
+    background: orange !important; }
+  .contentcontainer .tablecontainer th {
+    padding-bottom: 20px !important;
+    color: white !important;
+    font-weight: normal !important;
+    font-size: 16px !important; }
+  .contentcontainer .formcontainer form {
+    margin-top: 40px;
+    margin-left: 20px !important; }
+    .contentcontainer .formcontainer form label {
+      text-align: left !important;
+      font-weight: normal !important;
+      width: 25%; }
+    .contentcontainer .formcontainer form input {
+      width: 200px; }
+  .contentcontainer .formcontainer button {
+    width: 125px !important;
+    font-size: 15px !important;
+    font-weight: bold !important; }
+  .contentcontainer .formcontainer .form-divider {
+    border-top: 1px solid #ddd !important;
+    width: 103%; }
+  .contentcontainer form {
+    margin: 100px auto;
+    border: 1px solid #ddd;
+    padding: 30px;
+    width: 800px;
+    border-radius: 4px; }
+  .contentcontainer .shopstats .usercaption {
+    font-size: 60px;
+    margin: 40px auto 100px !important; }
+  .contentcontainer .shopstats .icons {
+    width: 40px; }
+    .contentcontainer .shopstats .icons span {
+      position: absolute;
+      top: -5px;
+      font-size: 36px;
+      color: orange; }
+  .contentcontainer .shopstats .datatext {
+    width: 150px;
+    margin-top: 15px;
+    text-transform: uppercase; }
+  .contentcontainer .panelbox {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    height: 350px;
+    margin: 20px auto; }
+    .contentcontainer .panelbox .header {
+      border-bottom: 5px solid orange;
+      padding-bottom: 15px;
+      width: 90%;
+      margin: 30px auto !important;
+      font-weight: bold !important;
+      font-size: 18px !important;
+      text-align: center !important;
+      letter-spacing: 0.1em; }
+    .contentcontainer .panelbox .content {
+      width: 90%;
+      margin: 5px auto 40px !important;
+      padding-left: 30px !important; }
+      .contentcontainer .panelbox .content .rate {
+        margin-top: 20px !important; }
+        .contentcontainer .panelbox .content .rate span {
+          font-size: 24px;
+          background: #eee;
+          padding: 10px;
+          margin-right: 7px; }
+  .contentcontainer .panelbox-lg {
+    height: 450px !important; }
+  .contentcontainer .expenserow {
+    padding-left: 30px !important;
+    padding-bottom: 40px !important; }
+    .contentcontainer .expenserow .title {
+      margin-top: 30px;
+      margin-bottom: 30px; }
+    .contentcontainer .expenserow form {
+      width: 400px !important;
+      padding-top: 30px !important;
+      margin-left: 0px !important;
+      margin-top: 30px !important; }
+  .contentcontainer .buttonrow {
+    padding-bottom: 90px !important; }
+
+/* Login css*/
+.logincontainer {
+  height: 800px; }
+  .logincontainer form {
+    width: 400px; }
+    .logincontainer form .subcaption {
+      color: #555 !important;
+      font-size: 16px; }
+    .logincontainer form .loginbtn {
+      width: 120px !important;
+      font-size: 15px !important;
+      font-weight: bold !important;
+      letter-spacing: 0.05em !important;
+      margin-left: 20px !important; }
+
+/* Admin Panel */
+.adminmenu .brand {
+  font-size: 14px !important;
+  color: white !important;
+  font-weight: bold !important; }
+
+.adminmenu .leftmenu {
+  margin-left: 50px !important; }
+
+.adminmenu .rightmenu {
+  margin-right: 30px !important; }
+
+.adminmenu ul li {
+  border-right: 2px solid #777 !important;
+  margin-top: 10px !important;
+  height: 30px !important; }
+
+.adminmenu ul > li:last-child {
+  border-right: none !important; }
+
+.adminmenu ul a {
+  margin-top: -10px !important;
+  font-weight: bold !important;
+  font-size: 13px !important; }
+
+.ratecontrolrow {
+  margin-top: 40px !important;
+  margin-bottom: 100px !important;
+  margin-left: -40px !important; }
+
+.ratecontrolinput {
+  width: 400px !important; }
+
+.contentcontainer .adminusercaption {
+  font-size: 60px;
+  margin: 40px auto !important; }
+
+/* Admin Panel */
+.statsrow .statsbox {
+  background: white;
+  width: 80%;
+  padding-bottom: 30px; }
+
+.statsrow .statsbox img {
+  height: 100px; }
+
+.salesrow {
+  height: 400px; }
+
+.error {
+  color: red; }

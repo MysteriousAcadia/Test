@@ -1,0 +1,47 @@
+/** header.scss
+    Contains css for the header  
+    -- Developed and Maintained by 
+    Sukor Consulting **/ 
+
+
+
+///Shop Keeper Menubar
+.menubar{
+  height: 50px;
+  border-radius: 4px;
+  margin-top:10px;
+  padding-top:15px;
+  font-weight: bold;
+  font-size:16px;
+} 
+
+
+/// Admin Menubar
+.adminmenu {
+  .brand {
+    font-size: 14px !important;
+    color: white !important;
+    font-weight: bold !important;
+  }
+  .leftmenu {
+    margin-left: 50px !important;
+  }
+  .rightmenu {
+    margin-right: 30px !important;
+  }
+  ul {
+    li {
+      border-right: 2px solid #777 !important;
+      margin-top: 10px !important;
+      height: 30px !important;
+    }
+    > li:last-child {
+      border-right: none !important;
+    }
+    a {
+      margin-top: -10px !important;
+      font-weight: bold !important;
+      font-size: 13px !important;
+    }
+  }
+}

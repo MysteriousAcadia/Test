@@ -1,0 +1,42 @@
+/** Config.scss
+    Contains configuration variables for projects 
+    -- Developed and Maintained by Sukor Consulting **/ 
+
+
+
+///Break Points
+$breakpoints: (
+  'mobile'     : (min-width: 320px),
+  'phablet'    : (min-width: 480px),
+  'tablet'     : (min-width: 767px ),
+  'laptop'     : (min-width: 992px ),
+  'desktop'    : (min-width: 1200px ),
+  'largescreen': (min-width: 2000px)
+) !default;
+
+
+///Colors
+///For other common bootstrap colors please refer to the ReadMe
+///Primary Color: ???
+///Secondary Color: ???
+///Background colors: ???
+
+$primary-color: #ffcc00; //yellow
+$background-1 : #f3f3f3; //grey  
+
+
+
+
+///Fonts
+
+
+
+
+
+
+
+///Component Configerations
+
+
+
+

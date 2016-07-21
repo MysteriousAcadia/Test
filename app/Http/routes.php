@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +24,19 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/home', 'HomeController@index');
-
+Route::group(['middleware' => ['web', 'auth']], function () {
+    Route::get('/', 'HomeController@index');
+    Route::post('/stock/create', 'HomeController@createStockInput');
+    Route::post('/sell/regular', 'HomeController@sellRegularEggs');
+    Route::post('/sell/damaged', 'HomeController@sellDamagedEggs');
+    Route::get('/admin', 'HomeController@adminIndex');
+    Route::post('/rate/update', 'HomeController@setRate');
+    Route::get('/statistics', 'HomeController@statistics');
+    Route::get('/shops', 'HomeController@shops');
+    Route::get('search/users', 'HomeController@searchUsers');
+    Route::get('users', 'HomeController@users');
+    Route::post('store/new', 'HomeController@newStore');
+    Route::post('user/new', 'HomeController@newUser');
 });
 
 Route::auth();

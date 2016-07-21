@@ -16,8 +16,8 @@ class CreateClosingStocksTable extends Migration
             $table->increments('id');
             $table->date('date');
             $table->integer('store_id');
-            $table->integer('stage');
-            $table->integer('quantity');
+            $table->integer('regular_eggs');
+            $table->integer('damaged_eggs');
             $table->integer('value');
             $table->timestamps();
         });
