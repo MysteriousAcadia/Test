@@ -53,14 +53,14 @@
                             </h3>
                             <p class="content">
                                 <strong><p class="text-center font16"> Regular </p> </strong> 
-                                @if(! empty($closing->regular))
-                                <div class="rate text-center"> <span> {{$closing->regular}} </span>  </div>
+                                @if(! empty($opening))
+                                <div class="rate text-center"> <span> {{$opening->stock_regular}} </span>  </div>
                                 @endif
                             </p>
                             <p class="content">
                                 <strong><p class="text-center font16"> Damaged </p> </strong> 
-                                @if(! empty($closing->damaged))
-                                <div class="rate text-center"> <span> {{$closing->damaged}} </span>  </div>
+                                @if(! empty($opening))
+                                <div class="rate text-center"> <span> {{$opening->stock_damaged}} </span>  </div>
                                 @endif
                             </p>
                         </div>
@@ -122,15 +122,18 @@
                             </h3>
                             <p class="content">
                                 <strong><p class="text-center font16"> Regular </p> </strong> 
-                                <div class="rate text-center"> <span> 24 </span>  </div>
-                            </p> 
+                                @if(! empty($closing))
+                                <div class="rate text-center"> <span> {{$closing->stock_regular}} </span>  </div>
+                                @endif
+                            </p>
                             <p class="content">
                                 <strong><p class="text-center font16"> Damaged </p> </strong> 
-                                <div class="rate text-center"> <span> 24 </span>  </div>
+                                @if(! empty($closing))
+                                <div class="rate text-center"> <span> {{$closing->stock_damaged}} </span>  </div>
+                                @endif
                             </p>
                         </div>
                     </div>
-                </div>
 
                 <div class="row contentrow stockinputrow">
                     <div class="row rowheader">
