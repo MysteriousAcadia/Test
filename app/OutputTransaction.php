@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class OutputTransaction extends Model
 {
-	protected $fillable =  ['user_id','regular_eggs','destroyed','rate','vehicle_no', 'store_id', 'amount', 'damaged_eggs', 'buyer', 'type'];
+	protected $fillable =  ['user_id','regular','destroyed','rate','vehicle_no', 'store_id', 'amount', 'damaged', 'transport_damage', 'buyer', 'type'];
 	
     public function user()
     {

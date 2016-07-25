@@ -14,12 +14,12 @@ class CreateInputTransactionaTable extends Migration
     {
         Schema::create('input_transactions', function(Blueprint $table){
             $table->increments('id');
+            $table->integer('store_id');
             $table->integer('user_id');
             $table->string('vehicle_no');
-            $table->integer('regular_eggs');
-            $table->integer('damaged_eggs');
+            $table->integer('regular');
+            $table->integer('damaged');
             $table->integer('transport_damage');
-            $table->integer('store_id');
             $table->timestamps();
         });
     }

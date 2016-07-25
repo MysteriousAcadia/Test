@@ -2,12 +2,42 @@ $(document).ready(function() {
 	$("#stockInputForm").validate({
 		rules: {
      		vehicle_no: "required",
-     		regular_eggs: "required",
+     		regular: "required",
+     		damaged: "required",
+     		transport_damaged: "required",
+
      	}	
 	});
 
-	$("#regular_eggs1").keyup(function() {
-  		$("#amount_total").val($("#regular_eggs1").val() * $("#rate_regular").val())
+	$("#regulareggsform").validate({
+		rules: {
+     		vehicle_no_in_regular: "required",
+     		buyer_in_regular: "required",
+     		regular_in_regular: "required",
+     		damaged_in_regular: "required",
+     		destroyed_in_regular: "required",
+
+     	}	
+	});
+
+	$("#damagedeggsform").validate({
+		rules: {
+     		vehicle_no_in_damaged: "required",
+     		buyer_in_damaged: "required",
+     		damaged_in_damaged: "required",
+     	}	
+	});
+
+	$("#expenseform").validate({
+		rules: {
+			details: "required",
+     		expense_amount: "required",
+     	}	
+	});
+
+
+	$("#regular_no").keyup(function() {
+  		$("#amount_total").val($("#regular_no").val() * $("#rate_regular").val())
 	});
 
 	$("#damaged_no").keyup(function() {

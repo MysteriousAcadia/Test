@@ -5,6 +5,16 @@
             <div class="container contentcontainer bg-white  go-bottom">
                 <div class="row shopstats">
                     <h1 class='usercaption text-center'><strong style='margin-left: -50px'>Welcome {{$user->name}}</strong></h1>
+                    @if (Session::has('message'))
+                    <div style="text-align: center" class="alert alert-warning">
+                      {!! Session::get('message')!!}
+                    </div>
+                    @endif
+                    @if(count($errors) > 0)
+                    <div style="text-align: center" class="alert alert-danger">
+                       There are some errors in the form you filled. Please try again
+                    </div>
+                    @endif
                     <p class='row'>
                         <div class="col-lg-4"> 
                             <ul class="list-inline">
@@ -18,7 +28,7 @@
                           <ul class="list-inline">
                                 <li class='icons'><span class='fa fa-rupee'></span></li>
                                 <li> <strong> RATE </strong> <br/>
-                                    <div class='datatext go-bottom'><span class='fa fa-rupee'></span> {{$prices->regular_eggs}}  </div>
+                                    <div class='datatext go-bottom'><span class='fa fa-rupee'>@if (!empty ($prices->regular)) {{$prices->regular}} @endif</span>  </div>
                                 </li>
                             </ul>
                         </div>
@@ -26,7 +36,7 @@
                             <ul class="list-inline">
                                 <li class='icons'><span class='fa fa-calendar-check-o'></span></li>
                                 <li> <strong> DATE </strong> <br/>
-                                     <div id='dateholder' class='datatext go-bottom'> {{$date}} </div>
+                                     <div id='dateholder' class='datatext go-bottom'> {{$display_date}} </div>
                                 </li>
                             </ul>
                         </div>
@@ -43,11 +53,15 @@
                             </h3>
                             <p class="content">
                                 <strong><p class="text-center font16"> Regular </p> </strong> 
+                                @if(! empty($closing->regular))
                                 <div class="rate text-center"> <span> {{$closing->regular}} </span>  </div>
+                                @endif
                             </p>
                             <p class="content">
                                 <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                @if(! empty($closing->damaged))
                                 <div class="rate text-center"> <span> {{$closing->damaged}} </span>  </div>
+                                @endif
                             </p>
                         </div>
                     </div>
@@ -58,15 +72,21 @@
                             </h3>
                              <p class="content">
                                 <strong><p class="text-center font16"> Regular </p> </strong> 
+                                @if(! empty($live_stock->regular))
                                 <div class="rate text-center"> <span> {{$live_stock->regular}} </span>  </div>
+                                @endif
                             </p> 
                             <p class="content">
-                                <strong><p class="text-center font16"> Transport Damage </p> </strong> 
-                                <div class="rate text-center"> <span> {{$live_stock->damaged}} </span>  </div>
+                                <strong><p class="text-center font16"> Transport Damage </p> </strong>
+                                @if(! empty($live_stock))
+                                <div class="rate text-center"> <span> {{$live_stock->transport_damage}} </span>  </div>
+                                @endif
                             </p>
                             <p class="content">
-                                <strong><p class="text-center font16"> Damaged Eggs </p> </strong> 
-                                <div class="rate text-center"> <span> {{$live_stock->transport_damage}}</span>  </div>
+                                <strong><p class="text-center font16"> Damaged Eggs </p> </strong>
+                                @if(! empty($live_stock)) 
+                                <div class="rate text-center"> <span> {{$live_stock->damaged}}</span>  </div>
+                                @endif
                             </p> 
                         </div> 
                     </div>
@@ -76,16 +96,22 @@
                                 DAYS SALE
                             </h3>
                             <p class="content">
-                                <strong><p class="text-center font16"> Regular </p> </strong> 
+                                <strong><p class="text-center font16"> Regular </p> </strong>
+                                @if(! empty($days_sale[0]))  
                                 <div class="rate text-center"> <span> {{$days_sale[0]}} </span>  </div>
+                                @endif
                             </p> 
                             <p class="content">
                                 <strong><p class="text-center font16"> Damaged </p> </strong> 
+                                @if(! empty($days_sale[1])) 
                                 <div class="rate text-center"> <span> {{$days_sale[1]}} </span>  </div>
+                                @endif
                             </p>
                             <p class="content">
                                 <strong><p class="text-center font16"> Destroyed </p> </strong> 
+                                @if(! empty($days_sale[2])) 
                                 <div class="rate text-center"> <span> {{$days_sale[2]}} </span>  </div>
+                                @endif
                             </p> 
                         </div>
                     </div>
@@ -126,24 +152,44 @@
                                   <input name="vehicle_no" id="vehicle_no" type='text' class='form-control' placeholder=''>
                                 </div>
                               </div>
+                              @if ($errors->has('vehicle_no'))
+                                  <span class="help-block">
+                                    <strong>{{ $errors->first('vehicle_no') }}</strong>
+                                  </span>
+                                @endif
                               <div class="form-group">
-                                <label class="control-label col-sm-2" for="regular_eggs">No of Eggs: </label>
+                                <label class="control-label col-sm-2" for="regular">No of Eggs: </label>
                                 <div class="col-sm-10">
-                                   <input id="regular_eggs" name="regular_eggs" type='number' class='form-control' placeholder=''>
+                                   <input id="regular" name="regular" type='number' class='form-control' placeholder=''>
                                 </div>
                               </div>
+                              @if ($errors->has('regular'))
+                                  <span class="help-block">
+                                    <strong>{{ $errors->first('regular') }}</strong>
+                                  </span>
+                              @endif
                               <div class="form-group">
-                                <label class="control-label col-sm-2" for="damaged_eggs">Damaged Eggs: </label>
+                                <label class="control-label col-sm-2" for="damaged">Damaged Eggs: </label>
                                 <div class="col-sm-10">
-                                   <input id="damaged_eggs" name="damaged_eggs" type='number' class='form-control' placeholder=''>
+                                   <input id="damaged" name="damaged" type='number' class='form-control' placeholder=''>
                                 </div>
                               </div>
+                              @if ($errors->has('damaged'))
+                                <span class="help-block">
+                                  <strong>{{ $errors->first('damaged') }}</strong>
+                                </span>
+                              @endif
                               <div class="form-group">
                                 <label class="control-label col-sm-2" for="transport_damage">Transport Damange: </label>
                                 <div class="col-sm-10">
                                    <input id="transport_damage" name="transport_damage" type='number' class='form-control' placeholder=''>
                                 </div>
                               </div>
+                              @if ($errors->has('transport_damage'))
+                                  <span class="help-block">
+                                    <strong>{{ $errors->first('transport_damage') }}</strong>
+                                  </span>
+                              @endif
                               
                               <hr class='form-divider'/>
 
@@ -166,14 +212,16 @@
                                   </tr>
                              </thead>
                              <tbody>
+                             @if(! empty($input_transactions))
                              @foreach ($input_transactions as $input_transaction)
                                <tr>
                                 <td>{{$input_transaction->vehicle_no}}</td>
-                                <td>{{$input_transaction->regular_eggs}}</td>
-                                <td>{{$input_transaction->damaged_eggs}}</td>
+                                <td>{{$input_transaction->regular}}</td>
+                                <td>{{$input_transaction->damaged}}</td>
                                 <td>{{$input_transaction->transport_damage}}</td>
                               </tr>
                               @endforeach
+                              @endif
                             </tbody>
                         </table>
                     </div>
@@ -198,41 +246,66 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4" for="vehicle_no">Vehicle Number:</label>
                                             <div class="col-sm-8">
-                                               <input id="vehicle_no" name="vehicle_no" type='text' class='form-control' placeholder=''>
+                                               <input id="vehicle_no" name="vehicle_no_in_regular" type='text' class='form-control' placeholder=''>
                                             </div>
                                           </div>
+                                          @if ($errors->has('vehicle_no_in_regular'))
+                                            <span class="help-block">
+                                              <strong>{{ $errors->first('vehicle_no_in_regular') }}</strong>
+                                            </span>
+                                          @endif
                                           <div class="form-group">
                                             <label class="control-label col-lg-4" for="buyer">Name of buyer:</label>
                                             <div class="col-lg-8">
-                                              <input id="buyer" name="buyer" type='text' class='form-control' placeholder=''>
+                                              <input id="buyer" name="buyer_in_regular" type='text' class='form-control' placeholder=''>
                                             </div>
                                           </div>
+                                          @if ($errors->has('buyer_in_regular'))
+                                            <span class="help-block">
+                                              <strong>{{ $errors->first('buyer_in_regular') }}</strong>
+                                            </span>
+                                          @endif
                                           <div class="form-group">
-                                            <label class="control-label col-lg-4" for="regular_eggs">No of Regular Eggss:</label>
+                                            <label class="control-label col-lg-4" for="regular">No of Regular Eggs:</label>
                                             <div class="col-lg-8">
-                                              <input name="regular_eggs" id="regular_eggs1" type='number' class='form-control' placeholder=''>
+                                              <input name="regular_in_regular" id="regular_no" type='number' class='form-control' placeholder=''>
                                             </div>
                                           </div>
+                                          @if ($errors->has('regular_in_regular'))
+                                            <span class="help-block">
+                                              <strong>{{ $errors->first('regular_in_regular') }}</strong>
+                                            </span>
+                                          @endif
                                           <div class="form-group">
                                             <label class="control-label col-lg-4" for="pwd">Damaged Eggs:</label>
                                             <div class="col-lg-8">
-                                              <input name="damaged_eggs" id="damaged_eggs" type='number' class='form-control' placeholder=''>
+                                              <input name="damaged_in_regular" id="damaged" type='number' class='form-control' placeholder=''>
                                             </div>
                                           </div>
+                                          @if ($errors->has('damaged_in_regular'))
+                                            <span class="help-block">
+                                              <strong>{{ $errors->first('damaged_in_regular') }}</strong>
+                                            </span>
+                                          @endif
                                           <div class="form-group">
                                             <label class="control-label col-lg-4" for="pwd">Destroyed Eggs:</label>
                                             <div class="col-lg-8">
-                                              <input name="destroyed" id="destroyed" type='number' class='form-control' placeholder=''>
+                                              <input name="destroyed_in_regular" id="destroyed" type='number' class='form-control' placeholder=''>
                                             </div>
                                           </div>
+                                          @if ($errors->has('destroyed_in_regular'))
+                                            <span class="help-block">
+                                              <strong>{{ $errors->first('destroyed_in_regular') }}</strong>
+                                            </span>
+                                          @endif
                                     </div>
 
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="">Rate:</label>
                                             <div class="col-sm-10">
-                                               <input id="rate_regular" name="rate" type='number' class='form-control' placeholder='' value={{$prices->regular_eggs}} readonly>
-                                            </div>
+                                               <input id="rate_regular" name="rate" type='number' class='form-control' placeholder='' value= @if(! empty($prices)) @if($prices->regular) {{ $prices->regular}} @endif @else 4 @endif readonly>
+                                            </div> 
                                         </div>
                                         <div class="form-group">
                                               <label class="control-label col-sm-2" for="pwd">Amount:</label>
@@ -269,17 +342,19 @@
                                   </tr>
                              </thead>
                              <tbody>
+                             @if(! empty($output_transactions_regular))
                               @foreach($output_transactions_regular as $output_transaction)
                               <tr>
                                     <td>{{$output_transaction->vehicle_no}}</td>
                                     <td>{{$output_transaction->buyer}} </td>
-                                    <td>{{$output_transaction->regular_eggs}}</td>
-                                    <td>{{$output_transaction->damaged_eggs}}</td>
+                                    <td>{{$output_transaction->regular}}</td>
+                                    <td>{{$output_transaction->damaged}}</td>
                                     <td>{{$output_transaction->destroyed}}</td>
                                     <td>{{$output_transaction->rate}} </td>
                                     <td>{{$output_transaction->amount}} </td>
                               </tr>
                               @endforeach
+                              @endif
                             </tbody>
                         </table>
                     </div>
@@ -306,27 +381,42 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="vehicle_no">Vehicle Number:</label>
                                             <div class="col-sm-10">
-                                              <input name="vehicle_no"  type='text' class='form-control' placeholder=''>
+                                              <input name="vehicle_no_in_damaged"  type='text' class='form-control' placeholder=''>
                                             </div>
                                          </div>
+                                          @if ($errors->has('vehicle_no_in_damaged'))
+                                            <span class="help-block">
+                                              <strong>{{ $errors->first('vehicle_no_in_damaged') }}</strong>
+                                            </span>
+                                          @endif
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="buyer">Name of buyer:</label>
                                             <div class="col-sm-10">
-                                              <input name="buyer" type='text' class='form-control' placeholder=''>
+                                              <input name="buyer_in_damaged" type='text' class='form-control' placeholder=''>
                                             </div>
                                         </div>
+                                        @if ($errors->has('buyer_in_damaged'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('buyer_in_damaged') }}</strong>
+                                          </span>
+                                        @endif                                        
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="pwd">No of Damaged Eggs:</label>
                                             <div class="col-sm-10">
-                                               <input id="damaged_no" name="damaged_eggs" type='number' class='form-control' placeholder=''>
+                                               <input id="damaged_no" name="damaged_in_damaged" type='number' class='form-control' placeholder=''>
                                             </div>
                                         </div>
+                                        @if ($errors->has('damaged_in_damaged'))
+                                            <span class="help-block">
+                                              <strong>{{ $errors->first('damaged_in_damaged') }}</strong>
+                                            </span>
+                                          @endif
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="pwd">Rate:</label>
                                             <div class="col-sm-10">
-                                               <input type='text' name="rate" class='form-control' placeholder='' readonly="true" id="rate_damaged" value="{{$prices->damaged_eggs}}">
+                                               <input type='text' name="rate_in_dmaged" class='form-control' placeholder='' readonly="true" id="rate_damaged" value= @if(! empty($prices)) @if($prices->damaged) {{ $prices->damaged}} @else 4 @endif  @endif >
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -361,15 +451,17 @@
                                   </tr>
                              </thead>
                              <tbody>
+                             @if(! empty($output_transactions_damaged))
                               @foreach($output_transactions_damaged as $output_transaction)
                               <tr>
                                     <td>{{$output_transaction->vehicle_no}}</td>
                                     <td>{{$output_transaction->buyer}} </td>
-                                    <td>{{$output_transaction->damaged_eggs}}</td>
+                                    <td>{{$output_transaction->damaged}}</td>
                                     <td>{{$output_transaction->rate}}</td>
                                     <td> {{$output_transaction->amount}} </td>
                               </tr>
                               @endforeach
+                              @endif
                             </tbody>
                         </table>
                     </div>
@@ -402,15 +494,21 @@
                             </h3>
                              <p class="content">
                                 <strong><p class="text-center font16"> Regular </p> </strong> 
-                                <div class="rate text-center"> <span> 24 </span>  </div>
+                                @if(! empty($live_stock->regular))
+                                <div class="rate text-center"> <span> {{$live_stock->regular}} </span>  </div>
+                                @endif
                             </p> 
                             <p class="content">
-                                <strong><p class="text-center font16"> Transport Damage </p> </strong> 
-                                <div class="rate text-center"> <span> 24 </span>  </div>
+                                <strong><p class="text-center font16"> Transport Damage </p> </strong>
+                                @if(! empty($live_stock))
+                                <div class="rate text-center"> <span> {{$live_stock->transport_damage}} </span>  </div>
+                                @endif
                             </p>
                             <p class="content">
-                                <strong><p class="text-center font16"> Damaged Eggs </p> </strong> 
-                                <div class="rate text-center"> <span> 24 </span>  </div>
+                                <strong><p class="text-center font16"> Damaged Eggs </p> </strong>
+                                @if(! empty($live_stock)) 
+                                <div class="rate text-center"> <span> {{$live_stock->damaged}}</span>  </div>
+                                @endif
                             </p> 
                         </div> 
                     </div>
@@ -421,6 +519,7 @@
                             </h3>
                             <p class="content">
                                 <strong><p class="text-center font16"> Regular </p> </strong> 
+                                @if(! empty($days_sale))
                                 <div class="rate text-center"> <span> {{$days_sale[0]}} </span>  </div>
                             </p> 
                             <p class="content">
@@ -431,6 +530,7 @@
                                 <strong><p class="text-center font16"> Destroyed </p> </strong> 
                                 <div class="rate text-center"> <span> {{$days_sale[2]}} </span>  </div>
                             </p> 
+                            @endif
                         </div>
                     </div>
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -453,26 +553,39 @@
                 <div class='row expenserow no-sidemargin'>
                     <p class='title'><h3> Expenses</h3></p>
                     <div class="col-lg-6">
-                        <label class='go-bottom'> Total Sales:  Rs 10000 </label> <br/>
-                        <label class='go-bottom'> Total Expenses: Rs 4000</label> <br/>
-                        <label class='go-bottom'> Amount Deposited in Bank: Rs 6000</label> <br/>
+                    @foreach($expenses as $expense)
+                       Rs. {{ $expense->amount }} on {{$expense->reference}}
+                    @endforeach
                     </div>
                     <div class="col-lg-6">
                         <p class='go-bottom'>
                             <span class='fa fa-plus-square pointer'> </span> Add Expense
-                            <form id='expenseform' role="form" style='display:none'>
+                            <form method="post" id='expenseform' role="form" action="/expense/create">
+                            <input type="hidden" name="_token" value={{ csrf_token() }}>
+                            <input type="hidden" id="store_id" name="store_id" value={{ $user->store->id }}>
+                             <input type="hidden" id="user_id" name="user_id" value={{ $user->id }}>
                                 <div class="form-group">
-                                    <label class="control-label" for="email">Details</label>
+                                    <label class="control-label" for="details">Details</label>
                                     <div>
-                                       <input type='text' class='form-control' placeholder=''>
+                                       <input name="details" type='text' class='form-control' placeholder=''>
                                     </div>
                                  </div>
+                                @if ($errors->has('details'))
+                                  <span class="help-block">
+                                    <strong>{{ $errors->first('details') }}</strong>
+                                  </span>
+                                @endif
                                 <div class="form-group go-bottom">
-                                    <label class="control-label" for="pwd">Amount</label>
+                                    <label class="control-label" for="amount">Amount</label>
                                     <div>
-                                        <input type='text' class='form-control' placeholder=''>
+                                        <input name="expense_amount" type='number' class='form-control' placeholder=''>
                                     </div>
                                 </div>
+                                @if ($errors->has('expense_amount'))
+                                  <span class="help-block">
+                                    <strong>{{ $errors->first('expense_amount') }}</strong>
+                                  </span>
+                                @endif
                                 <div class="form-group">
                                     <label class="control-label"></label>
                                     <div>
@@ -491,10 +604,12 @@
                                       </tr>
                                  </thead>
                                  <tbody>
+                                  @foreach($expenses as $expense)
                                   <tr>
-                                    <td>Transport</td>
-                                    <td>1500</td>
+                                    <td>{{$expense->reference}}</td>
+                                    <td>{{$expense->amount}}</td>
                                   </tr>
+                                  @endforeach
                                 </tbody>
                             </table>
                         </p>
@@ -503,8 +618,20 @@
                 </div>
 
                 <div class="row buttonrow text-center">
+                   <form method="post" name="stockMatched" id='shopCloseForm' class="form-horizontal shopkeeperform" role="form" action="/store/close">
+                    <input type="hidden" name="_token" value={{ csrf_token() }}>
+                    <input type="hidden" id="store_id" name="store_id" value={{ $user->store->id }}>
+                    <input type="hidden" id="user_id" name="user_id" value={{ $user->id }}>
+                    <input type="hidden" id="stocked-matched" name="stock_matched" value=1></input>
                     <button class='btn btn-lg btn-warning'> STOCK MATCHED , SHOP CLOSED </button>
+                    </form>
+                    <form method="post" name="stockNotMatched" id='shopCloseFormMatched' class="form-horizontal shopkeeperform" role="form" action="/store/close">
+                    <input type="hidden" name="_token" value={{ csrf_token() }}>
+                    <input type="hidden" id="store_id" name="store_id" value={{ $user->store->id }}>
+                    <input type="hidden" id="user_id" name="user_id" value={{ $user->id }}>
+                    <input type="hidden" id="stocked-matched" name="stock_matched" value=0></input>
                     <button class='btn btn-lg btn-danger' style='margin-left: 30px'> STOCK NOT MATCHED </button>
+                    </form>
                 </div>
 
 

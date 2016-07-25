@@ -35,7 +35,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $title = 'Healthy Eggs - Home';
         $user = Auth::user();
+        $display_date = Carbon::now()->format('d-m-Y');
         $store = Store::find($user->store_id);
         $prices = CurrentPrice::orderBy('created_at', 'desc')->first();
         $date = Carbon::now()->format('Y-m-d').'%';
@@ -43,40 +45,10 @@ class HomeController extends Controller
         $input_transactions = $store->getTodaysInputTransactions();
         $output_transactions_regular = $store->getTodaysRegularOutputTransactions();
         $output_transactions_damaged = $store->getTodaysDamagedOutputTransactions();
+        $expenses = $store->getTodaysExpenses();
         $days_sale = $store->getSaleByDate($date);
         $live_stock = Stock::getLiveStock($user->store->id);
-        return view('home', compact('user', 'prices', 'date', 'closing', 'live_stock', 'input_transactions', 'output_transactions_regular', 'output_transactions_damaged', 'days_sale'));
-    }
-
-    public function createStockInput()
-    {
-        $store = Store::find(Input::get('store_id'));
-        $regular_eggs = Input::get('regular_eggs');
-        $damaged_eggs = Input::get('damaged_eggs');
-        $transport_damage = Input::get('transport_damage');
-        $updateInputTransactionsTable = $store->createStockInput(Input::except('_token'));
-        if($updateInputTransactionsTable == 'success') {
-            $store->addToLiveStock($regular_eggs, $damaged_eggs, $transport_damage);
-        }
-        return back();
-    }
-
-    public function sellRegularEggs()
-    {
-        $store = Store::find(Input::get('store_id'));
-        $input = Input::except('_token');
-        $input['type'] = 'regular';
-        $updateOutputTransactionsTable = $store->createStockOutput($input);
-        return back();
-    }
-
-    public function sellDamagedEggs()
-    {
-        $store = Store::find(Input::get('store_id'));
-        $input = Input::except('_token');
-        $input['type'] = 'damaged';
-        $updateOutputTransactionsTable = $store->createStockOutput($input);
-        return back();
+        return view('home', compact('user', 'prices', 'date', 'closing', 'live_stock', 'input_transactions', 'output_transactions_regular', 'output_transactions_damaged', 'days_sale', 'title', 'display_date', 'expenses'));
     }
 
     public function adminIndex() {

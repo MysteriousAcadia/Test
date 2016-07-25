@@ -17,7 +17,8 @@ class CreateStocksTable extends Migration
             $table->integer('store_id');
             $table->integer('regular');
             $table->integer('damaged');
-            $table->integer('transport_damaged');
+            $table->integer('transport_damage');
+            $table->integer('destroyed');
             $table->timestamps();
         });
     }

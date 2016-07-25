@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Input;
 class InputTransaction extends Model
 {
 
-	protected $fillable =  ['user_id','regular_eggs','damaged_eggs','transport_damage','vehicle_no', 'store_id'];
+	protected $fillable =  ['user_id','regular','damaged','transport_damage','vehicle_no', 'store_id'];
 
     public function user()
     {

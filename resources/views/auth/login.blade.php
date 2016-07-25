@@ -11,7 +11,7 @@
                   <div class="col-xs-12">
                       <div class="input-group">
                           <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                         <input placeholder="Email" class='form-control' id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                         <input placeholder="Email" class='form-control' id="email" type="text" class="form-control" name="email" value="{{ old('email') }}">
                           </div>
                    </div>
               </div>

@@ -14,15 +14,17 @@ class CreateOutputTransactionsTable extends Migration
     {
         Schema::create('output_transactions', function(Blueprint $table){
             $table->increments('id');
+            $table->integer('user_id');
             $table->integer('store_id');
             $table->string('vehicle_no');
             $table->string('buyer');
-            $table->integer('regular_eggs');
-            $table->integer('damaged_eggs');
+            $table->string('type');
+            $table->integer('regular');
+            $table->integer('damaged');
             $table->integer('transport_damage');
+            $table->integer('destroyed');
             $table->integer('rate');
             $table->integer('amount');
-            $table->integer('user_id');
             $table->timestamps();
         });
     }

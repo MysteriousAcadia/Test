@@ -14,8 +14,8 @@ class CreateCurrentPricesTable extends Migration
     {
         Schema::create('current_prices', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('regular_eggs');
-            $table->integer('damaged_eggs');
+            $table->integer('regular');
+            $table->integer('damaged');
             $table->timestamps();
         });
     }

@@ -24,11 +24,13 @@
 |
 */
 
-Route::group(['middleware' => ['web', 'auth']], function () {
+Route::group(['middlewareGroups' => ['web', 'auth']], function () {
     Route::get('/', 'HomeController@index');
-    Route::post('/stock/create', 'HomeController@createStockInput');
-    Route::post('/sell/regular', 'HomeController@sellRegularEggs');
-    Route::post('/sell/damaged', 'HomeController@sellDamagedEggs');
+    Route::post('/stock/create', 'UsersController@createStockInput');
+    Route::post('/sell/regular', 'UsersController@sellRegularEggs');
+    Route::post('/sell/damaged', 'UsersController@sellDamagedEggs');
+    Route::post('/expense/create', 'UsersController@createExpense');
+    Route::post('/store/close', 'UsersController@closeShop');
     Route::get('/admin', 'HomeController@adminIndex');
     Route::post('/rate/update', 'HomeController@setRate');
     Route::get('/statistics', 'HomeController@statistics');
