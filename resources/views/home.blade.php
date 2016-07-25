@@ -419,7 +419,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="pwd">Rate:</label>
                                             <div class="col-sm-10">
-                                               <input type='text' name="rate_in_dmaged" class='form-control' placeholder='' readonly="true" id="rate_damaged" value= @if(! empty($prices)) @if($prices->damaged) {{ $prices->damaged}} @else 4 @endif  @endif >
+                                               <input type='text' name="rate_in_dmaged" class='form-control' placeholder='' readonly="true" id="rate_damaged" value= @if(! empty($prices)) @if($prices->damaged) {{ $prices->damaged}}  @endif @else 4 @endif >
                                             </div>
                                         </div>
                                         <div class="form-group">
