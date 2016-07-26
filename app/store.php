@@ -19,7 +19,7 @@ class store extends Model
 
     public function stock()
     {
-        return $this->hasOne('App\stock');
+        return $this->hasOne('App\Stock');
     }
 
     public function closingStock()
@@ -142,17 +142,17 @@ class store extends Model
                         ->where('store_id', $this->id);
         $eggs['regular'] = $query->sum('regular');
         $eggs['damaged'] = $query->sum('damaged') + $query->sum('transport_damage');
-        return $eggs;  
-    }
-
-    public function getInputStockByDate($date) {
-        $query = DB::table('input_transactions')
-                        ->where('created_at','like',$date)
-                        ->where('store_id', $this->id);
-        $eggs['regular'] = $query->sum('regular');
-        $eggs['damaged'] = $query->sum('damaged');
-        $eggs['transport_damage'] = $query->sum('transport_damage');
-        return $eggs;  
-    }
+         return $eggs;  
+     }
+ 
+     public function getInputStockByDate($date) {
+         $query = DB::table('input_transactions')
+                         ->where('created_at','like',$date)
+                         ->where('store_id', $this->id);
+         $eggs['regular'] = $query->sum('regular');
+         $eggs['damaged'] = $query->sum('damaged');
+         $eggs['transport_damage'] = $query->sum('transport_damage');
+         return $eggs;  
+     }
 
 }
