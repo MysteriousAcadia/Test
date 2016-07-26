@@ -62,8 +62,10 @@
                         <li><a class="navbar-brand" href="{{ url('/login') }}">Login</a></li>
                     @else
                         <span class="navbar-brand"> Hello {{ Auth::user()->name }} </span> 
+                        @if(Auth::user()->is_admin)
+                        <li><a class="navbar-brand" href="{{ url('/admin') }}">Admin</a></li>
+                        @endif
                         <li>
-
                          <a class="navbar-brand" href="{{ url('/logout') }}">| &nbsp;    Logout</a>
                         </li>
                     @endif

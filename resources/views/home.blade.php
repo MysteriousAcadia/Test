@@ -72,20 +72,20 @@
                             </h3>
                              <p class="content">
                                 <strong><p class="text-center font16"> Regular </p> </strong> 
-                                @if(! empty($live_stock->regular))
-                                <div class="rate text-center"> <span> {{$live_stock->regular}} </span>  </div>
+                                @if(! empty($days_input))
+                                <div class="rate text-center"> <span> {{$days_input['regular']}} </span>  </div>
                                 @endif
                             </p> 
                             <p class="content">
                                 <strong><p class="text-center font16"> Transport Damage </p> </strong>
-                                @if(! empty($live_stock))
-                                <div class="rate text-center"> <span> {{$live_stock->transport_damage}} </span>  </div>
+                                @if(! empty($days_input))
+                                <div class="rate text-center"> <span> {{$days_input['transport_damage']}} </span>  </div>
                                 @endif
                             </p>
                             <p class="content">
                                 <strong><p class="text-center font16"> Damaged Eggs </p> </strong>
-                                @if(! empty($live_stock)) 
-                                <div class="rate text-center"> <span> {{$live_stock->damaged}}</span>  </div>
+                                @if(! empty($days_input)) 
+                                <div class="rate text-center"> <span> {{$days_input['damaged']}}</span>  </div>
                                 @endif
                             </p> 
                         </div> 
@@ -134,7 +134,7 @@
                             </p>
                         </div>
                     </div>
-
+                </div>
                 <div class="row contentrow stockinputrow">
                     <div class="row rowheader">
                         <div class='col-xs-2 col-lg-1 col-md-2 col-sm-2 iconcol no-sidepad no-sidemargin'>
@@ -419,7 +419,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="pwd">Rate:</label>
                                             <div class="col-sm-10">
-                                               <input type='text' name="rate_in_dmaged" class='form-control' placeholder='' readonly="true" id="rate_damaged" value= @if(! empty($prices)) @if($prices->damaged) {{ $prices->damaged}} @else 4 @endif  @endif >
+                                               <input type='text' name="rate_in_dmaged" class='form-control' placeholder='' readonly="true" id="rate_damaged" value= @if(! empty($prices)) @if($prices->damaged) {{ $prices->damaged}}  @endif @else 4 @endif >
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -620,13 +620,13 @@
                     </div>
                 </div>
 
-                <div class="row buttonrow text-center">
-                   <form method="post" name="stockMatched" id='shopCloseForm' class="form-horizontal shopkeeperform" role="form" action="/store/close">
+                <div class="row buttonrow text-center" >
+                  <form method="post" name="stockMatched" id='shopCloseForm' class="form-horizontal shopkeeperform" role="form" action="/store/close">
                     <input type="hidden" name="_token" value={{ csrf_token() }}>
                     <input type="hidden" id="store_id" name="store_id" value={{ $user->store->id }}>
                     <input type="hidden" id="user_id" name="user_id" value={{ $user->id }}>
                     <input type="hidden" id="stocked-matched" name="stock_matched" value=1></input>
-                    <button class='btn btn-lg btn-warning'> STOCK MATCHED , SHOP CLOSED </button>
+                    <button type="submit" class='btn btn-lg btn-warning'> STOCK MATCHED , SHOP CLOSED </button>
                     </form>
                     <form method="post" name="stockNotMatched" id='shopCloseFormMatched' class="form-horizontal shopkeeperform" role="form" action="/store/close">
                     <input type="hidden" name="_token" value={{ csrf_token() }}>

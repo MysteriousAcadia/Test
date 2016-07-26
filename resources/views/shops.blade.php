@@ -3,18 +3,23 @@
 
  <div class="col-lg-6">
                         <p class='go-bottom'>
-                            <h3> Add a new store </h3>
+                    <h3> Add a new store </h3>
+                    @if (Session::has('message'))
+                    <div style="text-align: center" class="alert alert-warning">
+                      {!! Session::get('message')!!}
+                    </div>
+                    @endif
   <form method="post" id='storenewform' class="form-horizontal shopkeeperform" role="form" action="/store/new" style="margin-top: 20px">
                   <input type="hidden" name="_token" value={{ csrf_token() }}>                                <div class="form-group">
                                     <label class="control-label" for="email">Name</label>
                                     <div>
-                                       <input type='text' name="name" class='form-control' placeholder=''>
+                                       <input type='text' name="name" class='form-control' placeholder='' required>
                                     </div>
                                  </div>
                                 <div class="form-group go-bottom">
                                     <label class="control-label" for="pwd">Address</label>
                                     <div>
-                                        <input name="address" type='text' class='form-control' placeholder=''>
+                                        <input name="address" type='text' class='form-control' placeholder='' required>
                                     </div>
                                 </div>
                                 <div class="form-group">

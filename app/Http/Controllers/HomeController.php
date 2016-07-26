@@ -11,9 +11,11 @@ use App\Stock;
 use App\Store;
 use App\User;
 use App\InputTransaction;
+use App\OutputTransaction;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 
 class HomeController extends Controller
@@ -54,24 +56,30 @@ class HomeController extends Controller
         $output_transactions_regular = $store->getTodaysRegularOutputTransactions();
         $output_transactions_damaged = $store->getTodaysDamagedOutputTransactions();
         $expenses = $store->getTodaysExpenses();
+        $days_input = $store->getInputStockByDate($date);
         $days_sale = $store->getSaleByDate($date);
         $live_stock = Stock::getLiveStock($user->store->id);
-        return view('home', compact('user', 'prices', 'date', 'closing', 'live_stock', 'input_transactions', 'output_transactions_regular', 'output_transactions_damaged', 'days_sale', 'title', 'display_date', 'expenses', 'opening'));
+        return view('home', compact('user', 'prices', 'date', 'closing', 'live_stock', 'input_transactions', 'output_transactions_regular', 'output_transactions_damaged', 'days_sale', 'title', 'display_date', 'expenses', 'opening', 'days_input'));
     }
 
     public function adminIndex() {
-        $today = Carbon::now()->format('Y-m-d');
+        $today = Carbon::now()->format('Y-m-d').'%';
         $yesterday = date('Y-m-d',strtotime("-1 days")) .'%';
-        $store = new Store;
-        $sale = $store->getSaleByDate($yesterday);
         $stores = Store::all();
+        $days_input = InputTransaction::getAllInput($today);
+        $days_output = OutputTransaction::getAllOutput($today);
         $prices = CurrentPrice::orderBy('created_at', 'desc')->first();
-        return view('admin', compact('prices', 'stores', 'sale', 'yesterday', 'today'));
+        $prices_today = CurrentPrice::where('created_at', 'like', $today)->first();
+        $closing = ClosingStock::where('created_at', 'like', $today)
+                                ->orderBy('created_at', 'desc')->get();
+        $closing_yesterday = ClosingStock::where('created_at', 'like', $yesterday)
+                                ->orderBy('created_at', 'desc')->get();
+        return view('admin', compact('prices', 'stores', 'sale', 'yesterday', 'today', 'prices_today', 'closing', 'closing_yesterday', 'days_input', 'days_output'));
     }
 
     public function setRate() {
         $input = Input::except('_token');
-        $input['damaged_eggs'] = $input['regular_eggs'];
+        $input['damaged'] = $input['regular'];
         CurrentPrice::create($input);
         return back();
     }
@@ -101,14 +109,22 @@ class HomeController extends Controller
     }
 
     public function newStore() {
-        Store::create(Input::except('_token'));
+        $user = User::where('id', Input::get('user_id'))->first();
+        if($user->store_id != 0) {
+            Session::flash('message', 'Shopkeeper already operating in another shop. Failed to create shop.');
+            return back();
+        }
+        $store = Store::create(Input::except('_token'));
+        $user->store_id = $store->id;
+        $user->update();
+        Session::flash('message', 'Shop created successfully! ' .$user->name . ' is the Shopkeeper');
         return back();
     }
     public function newUser() {
         $input = Input::except('_token');
         $hashed = Hash::make($input['password']);
         $input['password'] = $hashed;
-        $input['store_id'] = 1;
+        $input['store_id'] = 0;
         User::create($input);
         return back();
     }

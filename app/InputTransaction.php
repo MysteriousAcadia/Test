@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Input;
-
+use DB;
+use App\Store;
 
 class InputTransaction extends Model
 {
@@ -19,6 +20,20 @@ class InputTransaction extends Model
     public function store()
     {
     	return $this->belongsTo('App\Store');
+    }
+
+    public static function getAllInput($date)
+    {
+    	$stores = Store::all();
+    	foreach ($stores as $key => $store) {
+	    	$query = DB::table('input_transactions')
+	                        ->where('created_at','like',$date)
+	                        ->where('store_id', $store->id);
+	        $eggs[$store->id]['regular'] = $query->sum('regular');
+	        $eggs[$store->id]['damaged'] = $query->sum('damaged');
+	        $eggs[$store->id]['tranport_damage'] = $query->sum('transport_damage');
+	    }  
+	    return $eggs;
     }
 
 }

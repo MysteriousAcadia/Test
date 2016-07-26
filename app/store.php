@@ -141,7 +141,17 @@ class store extends Model
                         ->where('created_at','like',$date)
                         ->where('store_id', $this->id);
         $eggs['regular'] = $query->sum('regular');
+        $eggs['damaged'] = $query->sum('damaged') + $query->sum('transport_damage');
+        return $eggs;  
+    }
+
+    public function getInputStockByDate($date) {
+        $query = DB::table('input_transactions')
+                        ->where('created_at','like',$date)
+                        ->where('store_id', $this->id);
+        $eggs['regular'] = $query->sum('regular');
         $eggs['damaged'] = $query->sum('damaged');
+        $eggs['transport_damage'] = $query->sum('transport_damage');
         return $eggs;  
     }
 

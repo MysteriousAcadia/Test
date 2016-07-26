@@ -26,7 +26,7 @@ class CreateClosingStockTable extends Migration
             $table->integer('amount');
             $table->integer('expenses');
             $table->integer('user_id');
-            $table->boolean('stock_matched')
+            $table->boolean('stock_matched');
             $table->timestamps();
         });
     }
